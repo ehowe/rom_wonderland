@@ -1,0 +1,14 @@
+%h1 Welcome to Rom Wonderland
+%p I'm sick of rom sites being loaded with ads that make you click a million times, and I decided to fix it
+
+%h3 Please select a system below
+
+%table
+  %thead
+    %th System Name
+    %th Number of roms
+  %tbody
+    - @systems.each do |system|
+      %tr
+        %td= link_to system.name, system_path(system.id)
+        %td= system.games.count

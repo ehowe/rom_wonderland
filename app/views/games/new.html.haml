@@ -1,0 +1,10 @@
+%h3 Create a new game
+
+#form{"data-search-games-path" => search_games_path, class: "form-horizontal"}
+  = form_for Game.new, url: systems_games_path(@system.id) do |form|
+    = label_tag :game_name, "Name"
+    = form.text_field :name
+    %br
+    = label_tag :game_rom, "Rom"
+    = form.file_field :rom
+    = form.submit

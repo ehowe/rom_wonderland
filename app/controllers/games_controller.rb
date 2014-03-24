@@ -24,6 +24,6 @@ class GamesController < ApplicationController
   end
 
   def game
-    Game.find(params[:id])
+    @_game ||= Game.find(params[:id])
   end
 end

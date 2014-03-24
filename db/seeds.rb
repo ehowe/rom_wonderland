@@ -6,10 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-if Rails.env == "development" || Rails.env == "test"
-  User.where(email: "test@example.com", password: "testtest", password_confirmation: "testtest").first_or_create
-end
-
 #NES, SNES, Genesis
 systems = %w(7 6 18)
 platforms = RomWonderland.gamesdb.platforms.all.select { |p| systems.include?(p.id) }

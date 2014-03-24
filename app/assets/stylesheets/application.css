@@ -12,3 +12,45 @@
  *= require_tree .
  *= require bootstrap.min
  */
+
+.ui-helper-hidden-accessible { position: absolute; left:-999em; }
+
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+  cursor: default;
+  position: absolute;
+  border: 1px solid grey;
+  background: white;
+}
+
+.ui-menu {
+  display: block;
+  float: left;
+  list-style: none outside none;
+  margin: 0;
+  padding: 2px;
+
+  .ui-widget-content {
+    border: 1px solid #a6c9e2;
+    background: #fcfdfd url("/images/ui-bg_inset-hard_100_fcfdfd_1x100.png") 50% bottom repeat-x;
+    color: #222222;
+  }
+
+  .ui-menu-item {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    a {
+      display: block;
+      line-height: 1.5;
+      padding: 0.2em 0.4em;
+      text-decoration: none;
+    }
+  }
+}

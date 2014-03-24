@@ -1,6 +1,8 @@
 class Game < ActiveRecord::Base
   acts_as_paranoid
 
+  self.per_page = 20
+
   belongs_to :system
 
   has_attached_file :rom
