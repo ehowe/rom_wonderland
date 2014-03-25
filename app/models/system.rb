@@ -8,6 +8,12 @@ class System < ActiveRecord::Base
   end
 
   def api_games
-    self.info.games
+    if system_key = RomWonderland.redis.get(self.id)
+      JSON.parse(system_key)
+    else
+      games = self.info.games.map(&:game_title)
+      RomWonderland.redis.set(self.id, games.to_json)
+      games
+    end
   end
 end

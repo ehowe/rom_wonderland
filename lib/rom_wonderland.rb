@@ -1,3 +1,3 @@
 module RomWonderland
-  mattr_accessor :gamesdb
+  mattr_accessor :gamesdb, :redis
 end

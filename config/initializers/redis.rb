@@ -1,0 +1,1 @@
+RomWonderland.redis = Redis.new

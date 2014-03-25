@@ -19,7 +19,7 @@ class SystemsController < ApplicationController
 
   # Javascript autocomplete
   def search
-    @games = system.info.games.select { |g| g.game_title =~ /#{params[:term]}/i }.sort_by(&:game_title).map(&:game_title)
+    @games = system.api_games.select { |g| g =~ /#{params[:term]}/i }.sort
 
     respond_to do |format|
       format.json { render json: @games }

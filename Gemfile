@@ -18,6 +18,7 @@ gem 'will_paginate'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'therubyracer'
+gem 'redis'
 
 group :test do
   gem 'rspec-rails'
