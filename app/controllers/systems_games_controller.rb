@@ -20,7 +20,7 @@ class SystemsGamesController < ApplicationController
   end
 
   def index
-    @games = system.games
+    @games = system.games.where(deleted_at: nil)
 
     respond_to do |format|
       format.json { render "games/index", format: :rabl }

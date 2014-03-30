@@ -7,5 +7,5 @@ $(document).ready ->
       $.getJSON search_games_path, { term: request.term }, response
     , minChars: 1,
     max: 40,
-    dataType: 'json',
+    dataType: 'json'
   })

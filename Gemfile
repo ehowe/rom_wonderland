@@ -16,7 +16,7 @@ gem 'hashie'
 gem 'paranoia', :github => 'radar/paranoia', :branch => 'rails4'
 gem 'will_paginate'
 gem 'jquery-ui-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: "bootstrap3"
 gem 'therubyracer'
 gem 'redis'
 
