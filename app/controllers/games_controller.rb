@@ -3,7 +3,7 @@ class GamesController < ApplicationController
     @games = Game.all
 
     respond_to do |format|
-      format.json { render "games/index", format: :rabl }
+      format.json { render "games/index", handlers: [:rabl] }
     end
   end
 
@@ -11,7 +11,7 @@ class GamesController < ApplicationController
     @game = game
 
     respond_to do |format|
-      format.json { render "games/show", format: :rabl }
+      format.json { render "games/show", handlers: [:rabl] }
     end
   end
 
@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     @game = game.destroy
 
     respond_to do |format|
-      format.json { render "games/show", format: :rabl }
+      format.json { render "games/show", handlers: [:rabl] }
     end
   end
 

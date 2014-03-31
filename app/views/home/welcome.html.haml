@@ -7,8 +7,10 @@
   %thead
     %th System Name
     %th Number of roms
+    %th Number of emulators
   %tbody
     - @systems.each do |system|
       %tr
         %td= link_to system.name, system_path(system.id)
         %td= system.games.count
+        %td= system.emulators.count
