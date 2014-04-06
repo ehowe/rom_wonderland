@@ -1,4 +1,4 @@
-class SystemsGamesController < ApplicationController
+class SystemsEmulatorsController < ApplicationController
   def new
     @system = system
 
@@ -13,7 +13,7 @@ class SystemsGamesController < ApplicationController
 
     options = params.require(:emulator).permit(:name, :emulator)
 
-    @game = system.emulators.create!(options)
+    @emulator = system.emulators.create!(options)
 
     respond_to do |format|
       format.html { render "emulators/show", handlers: [:haml] }
@@ -22,7 +22,7 @@ class SystemsGamesController < ApplicationController
   end
 
   def index
-    @games = system.emulators.where(deleted_at: nil)
+    @emulators = system.emulators.where(deleted_at: nil)
 
     respond_to do |format|
       format.json { render "emulators/index", handlers: [:rabl] }

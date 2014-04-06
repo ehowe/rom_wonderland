@@ -23,8 +23,8 @@ class Initial < ActiveRecord::Migration
     end
 
     create_table :emulators_systems, id: :uuid do |t|
-      t.string :system_id
-      t.string :emulator_id
+      t.uuid :system_id
+      t.uuid :emulator_id
       t.boolean :emulator_for_system
     end
 

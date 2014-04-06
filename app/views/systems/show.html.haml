@@ -1,0 +1,27 @@
+#games
+  %h3 Total Number of games: #{@system.games.count}
+  - unless @games.empty?
+    %table
+      %thead
+        %th Name
+        %th Download link
+      %tbody
+        - @games.each do |game|
+          %tr
+            %td= game.name
+            %td= link_to "Download", game.rom.url(:original, false)
+  = link_to "New game", new_systems_game_path(@system.id)
+
+#emulators
+  %h3 Emulators
+  - unless @emulators.empty?
+    %table
+      %thead
+        %th Name
+        %th Download link
+      %tbody
+        - @emulators.each do |emulator|
+          %tr
+            %td= emulator.name
+            %td= link_to "Download", emulator.emulator.url(:original, false)
+  = link_to "New emulator", new_systems_emulator_path(@system.id)

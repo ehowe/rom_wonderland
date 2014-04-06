@@ -21,10 +21,10 @@ module ResourceHelper
   def create_emulator(options={})
     system = options[:system]
 
-    if emulator_path = options[:emulator][:emulator]
+    if emulator_file_path = options[:emulator][:emulator]
       options[:emulator][:emulator] = {}
-      options[:emulator][:emulator][:data] = Base64.encode64(File.open(emulator_path, "rb").read)
-      options[:emulator][:emulator][:filename] = emulator_path.split('/').last
+      options[:emulator][:emulator][:data] = Base64.encode64(File.open(emulator_file_path, "rb").read)
+      options[:emulator][:emulator][:filename] = emulator_file_path.split('/').last
       options[:emulator][:emulator][:content_type] = "application/zip"
     end
 

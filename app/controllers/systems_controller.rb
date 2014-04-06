@@ -8,8 +8,9 @@ class SystemsController < ApplicationController
   end
 
   def show
-    @system = system
-    @games  = system.games.paginate(page: params[:page])
+    @system    = system
+    @games     = system.games.paginate(page: params[:page])
+    @emulators = system.emulators
 
     respond_to do |format|
       format.html { render "systems/show", handlers: [:haml] }

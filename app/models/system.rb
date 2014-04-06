@@ -2,7 +2,8 @@ class System < ActiveRecord::Base
   acts_as_paranoid
 
   has_many :games
-  has_many :emulators, through: :emulators_systems, scope: lambda { where(emulator_for_system: true) }
+  has_many :emulators_systems, lambda { where(emulator_for_system: true) }, class_name: "EmulatorsSystem"
+  has_many :emulators, through: :emulators_systems
 
   def info
     RomWonderland.gamesdb.platforms.all.detect { |p| p.name == self.name }

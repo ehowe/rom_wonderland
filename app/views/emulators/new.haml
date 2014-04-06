@@ -1,0 +1,9 @@
+%h3 Create a new emulator
+
+= form_for Emulator.new, url: systems_emulators_path(@system.id) do |form|
+  = label_tag :emulator_name, "Name"
+  = form.text_field :name
+  %br
+  = label_tag :emulator_emulator, "Emulator"
+  = form.file_field :emulator
+  = form.submit
